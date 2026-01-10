@@ -1,0 +1,37 @@
+.timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: monospace;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    background: var(--color-background);
+    color: var(--color-text-secondary);
+}
+
+.timer--urgent {
+    color: var(--color-accent);
+    background: #FFF1F2;
+    animation: pulse 2s infinite;
+}
+
+.timer--minimal {
+    background: transparent;
+    padding: 0;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,76 @@
+.deal-card {
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--color-border);
+}
+
+.deal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.deal-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.deal-card__restaurant {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deal-card__items {
+    margin-bottom: var(--spacing-md);
+    height: 40px;
+    /* Force height for alignment */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.deal-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.deal-card__timer-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.deal-card__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+}
+
+.deal-card__original-price {
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.deal-card__final-price {
+    color: var(--color-primary-dark);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
+}
+
+.deal-card__footer {
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+}

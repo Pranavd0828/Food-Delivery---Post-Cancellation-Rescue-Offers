@@ -1,0 +1,33 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge--default {
+    background-color: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.badge--discount {
+    background-color: #E0E7FF;
+    /* Light indigo */
+    color: var(--color-primary);
+}
+
+.badge--urgent {
+    background-color: #FEE2E2;
+    /* Light red */
+    color: var(--color-accent);
+}
+
+.badge--success {
+    background-color: #D1FAE5;
+    /* Light green */
+    color: #059669;
+}

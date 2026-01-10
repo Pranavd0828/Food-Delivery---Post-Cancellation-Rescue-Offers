@@ -1,0 +1,50 @@
+.mobile-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 480px;
+    /* Constrain width for desktop viewing */
+    margin: 0 auto;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+}
+
+.mobile-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 70px;
+    /* Space for bottom nav */
+}
+
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-secondary);
+    font-size: 10px;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.nav-item--active {
+    color: var(--color-primary);
+}

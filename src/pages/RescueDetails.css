@@ -1,0 +1,112 @@
+.rescue-details {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+}
+
+.details-header {
+    padding: var(--spacing-md);
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.details-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+.restaurant-info {
+    margin-bottom: var(--spacing-lg);
+}
+
+.rescue-alert {
+    background: #EFF6FF;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.timer-banner {
+    background: #FFF1F2;
+    color: var(--color-accent);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: var(--spacing-lg);
+}
+
+.items-list {
+    background: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.order-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-qty {
+    font-weight: bold;
+}
+
+.item-name {
+    flex: 1;
+}
+
+.price-breakdown {
+    background: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.strike {
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+}
+
+.discount-row {
+    color: var(--color-secondary);
+}
+
+.total-row {
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    margin-top: var(--spacing-sm);
+}
+
+.details-footer {
+    padding: var(--spacing-md);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}

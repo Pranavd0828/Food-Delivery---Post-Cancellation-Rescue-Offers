@@ -1,0 +1,89 @@
+.tracking-page {
+    height: 100vh;
+    position: relative;
+    background: #e5e7eb;
+}
+
+.map-placeholder {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    background: #f3f4f6;
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.tracking-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: var(--color-surface);
+    border-top-left-radius: var(--radius-xl);
+    border-top-right-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-float);
+    display: flex;
+    flex-direction: column;
+}
+
+.sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    margin: 0 auto var(--spacing-md);
+}
+
+.tracking-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.status-timeline {
+    flex: 1;
+    padding: 0 var(--spacing-lg);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-secondary);
+}
+
+.timeline-item.completed {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.timeline-icon {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
