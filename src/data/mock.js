@@ -10,7 +10,8 @@ export const RESTAURANTS = [
     {
         id: 'r1',
         name: 'Burger & Co.',
-        image: 'burgers', // Placeholder key for image mapping
+        image: 'burgers',
+        tags: ['Burgers', 'American', 'Fast Food'],
         lat: 37.7750,
         lng: -122.4183
     },
@@ -18,6 +19,7 @@ export const RESTAURANTS = [
         id: 'r2',
         name: 'Sushi Zen',
         image: 'sushi',
+        tags: ['Sushi', 'Asian', 'Japanese'],
         lat: 37.7739,
         lng: -122.4312
     },
@@ -25,6 +27,7 @@ export const RESTAURANTS = [
         id: 'r3',
         name: 'Pasta House',
         image: 'pasta',
+        tags: ['Pizza', 'Italian', 'Pasta'],
         lat: 37.7849,
         lng: -122.4094
     }

@@ -6,6 +6,7 @@ import RescueDetails from './pages/RescueDetails';
 import Checkout from './pages/Checkout';
 import Tracking from './pages/Tracking';
 import Receipt from './pages/Receipt';
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="browse" element={<div>Browse (Mock)</div>} />
         <Route path="orders" element={<Tracking />} />
-        <Route path="account" element={<div>Account (Mock)</div>} />
+        <Route path="account" element={<Settings />} />
       </Route>
       {/* Full screen routes */}
       <Route path="/rescue/:offerId" element={<RescueDetails />} />

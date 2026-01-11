@@ -1,0 +1,109 @@
+.settings-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-header {
+    padding: var(--spacing-lg);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.settings-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.settings-group {
+    margin-bottom: var(--spacing-xl);
+}
+
+.group-title {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.setting-list>.setting-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.setting-list>.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    background: var(--color-surface);
+    transition: background 0.2s;
+}
+
+.setting-item:hover {
+    background: var(--color-background);
+}
+
+.setting-icon-wrapper {
+    color: var(--color-text-secondary);
+}
+
+.setting-label {
+    flex: 1;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: var(--color-border);
+    border-radius: 99px;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.toggle-switch.active {
+    background: var(--color-primary);
+}
+
+.toggle-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active .toggle-thumb {
+    transform: translateX(20px);
+}

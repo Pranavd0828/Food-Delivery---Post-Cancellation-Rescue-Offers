@@ -45,3 +45,42 @@
     background: var(--color-skeleton);
     border-radius: var(--radius-md);
 }
+
+/* Categories */
+.category-scroll {
+    display: flex;
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-chip {
+    padding: 6px 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    transition: all 0.2s;
+    color: var(--color-text-secondary);
+}
+
+.category-chip.active {
+    background: var(--color-text-main);
+    color: var(--color-background);
+    /* Inverted */
+    border-color: var(--color-text-main);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--color-text-secondary);
+}
