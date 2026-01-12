@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Common/Button';
 import { Badge } from '../components/Common/Badge';
+import TrackingMap from '../components/Rescue/TrackingMap';
 import { CheckCircle, Clock } from 'lucide-react';
 import './Tracking.css';
 
@@ -36,7 +37,7 @@ export default function Tracking() {
     return (
         <div className="tracking-page">
             <div className="map-placeholder">
-                <span>Map View Placeholder</span>
+                <TrackingMap step={currentStep} />
             </div>
 
             <div className="tracking-sheet">

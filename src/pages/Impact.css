@@ -1,0 +1,154 @@
+.impact-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+}
+
+.impact-header {
+    background: linear-gradient(135deg, #FF9F43 0%, #FF6B6B 100%);
+    /* Orange/Red Gradient */
+    color: white;
+    padding: var(--spacing-xl) var(--spacing-lg) 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.trophy-icon {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    margin-bottom: var(--spacing-sm);
+}
+
+.impact-header h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.impact-body {
+    flex: 1;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    margin-top: -40px;
+    position: relative;
+    z-index: 5;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stats-grid .stat-card:first-child {
+    grid-column: span 2;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.stat-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon-wrapper.green {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.stat-icon-wrapper.teal {
+    background: #CCFBF1;
+    color: #0F766E;
+}
+
+.stat-icon-wrapper.orange {
+    background: #FFEDD5;
+    color: #C2410C;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.impact-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-circle {
+    width: 48px;
+    height: 48px;
+    background: #FEF3C7;
+    color: #D97706;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: var(--shadow-sm);
+}
+
+.impact-badge.locked .badge-circle {
+    background: var(--color-skeleton);
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+}
+
+.badge-label {
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+.chart-placeholder {
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: var(--spacing-lg);
+}
+
+.bar {
+    width: 12%;
+    background: var(--color-skeleton);
+    border-radius: var(--radius-sm);
+}
+
+.bar.active {
+    background: var(--color-primary);
+}

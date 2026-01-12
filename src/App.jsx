@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout';
 import Tracking from './pages/Tracking';
 import Receipt from './pages/Receipt';
 import Settings from './pages/Settings';
+import Impact from './pages/Impact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="browse" element={<div>Browse (Mock)</div>} />
         <Route path="orders" element={<Tracking />} />
         <Route path="account" element={<Settings />} />
+        <Route path="impact" element={<Impact />} />
       </Route>
       {/* Full screen routes */}
       <Route path="/rescue/:offerId" element={<RescueDetails />} />

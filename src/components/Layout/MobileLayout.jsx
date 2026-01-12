@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Search, ShoppingBag, User } from 'lucide-react';
+import { Home, Search, ShoppingBag, User, Trophy } from 'lucide-react';
 import { NavLink, Outlet } from 'react-router-dom';
 import clsx from 'clsx';
 import './Layout.css';
@@ -23,6 +23,7 @@ export const MobileLayout = () => {
             <nav className="bottom-nav">
                 <NavItem to="/" icon={Home} label="Home" />
                 <NavItem to="/browse" icon={Search} label="Browse" />
+                <NavItem to="/impact" icon={Trophy} label="Impact" />
                 <NavItem to="/orders" icon={ShoppingBag} label="Orders" />
                 <NavItem to="/account" icon={User} label="Account" />
             </nav>
