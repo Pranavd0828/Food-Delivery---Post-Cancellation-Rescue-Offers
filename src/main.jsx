@@ -5,6 +5,7 @@ import App from './App'
 import { RescueProvider } from './contexts/RescueContext'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { NotificationProvider } from './contexts/NotificationContext'
+import { FavoritesProvider } from './contexts/FavoritesContext'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,9 +13,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <ThemeProvider>
         <NotificationProvider>
-          <RescueProvider>
-            <App />
-          </RescueProvider>
+          <FavoritesProvider>
+            <RescueProvider>
+              <App />
+            </RescueProvider>
+          </FavoritesProvider>
         </NotificationProvider>
       </ThemeProvider>
     </BrowserRouter>

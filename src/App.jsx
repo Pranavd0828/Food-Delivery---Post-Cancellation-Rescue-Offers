@@ -8,6 +8,7 @@ import Tracking from './pages/Tracking';
 import Receipt from './pages/Receipt';
 import Settings from './pages/Settings';
 import Impact from './pages/Impact';
+import Favorites from './pages/Favorites';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="orders" element={<Tracking />} />
         <Route path="account" element={<Settings />} />
         <Route path="impact" element={<Impact />} />
+        <Route path="favorites" element={<Favorites />} />
       </Route>
       {/* Full screen routes */}
       <Route path="/rescue/:offerId" element={<RescueDetails />} />

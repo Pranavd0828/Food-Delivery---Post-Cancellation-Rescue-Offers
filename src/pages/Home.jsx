@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RescueDealsCarousel } from '../components/Rescue/RescueDealsCarousel';
+import { CommunityFeed } from '../components/Rescue/CommunityFeed';
 import { Card } from '../components/Common/Card';
 import { RESTAURANTS } from '../data/mock';
 import './Home.css';
@@ -40,6 +41,11 @@ export default function Home() {
                     <p>123 Main St, San Francisco</p>
                 </motion.div>
             </header>
+
+            {/* Social Proof - Flow N */}
+            <motion.div variants={itemVariants}>
+                <CommunityFeed />
+            </motion.div>
 
             {/* Rescue Module - Flow B */}
             <motion.div variants={itemVariants}>
