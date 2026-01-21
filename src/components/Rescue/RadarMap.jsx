@@ -38,13 +38,24 @@ const RadarMap = () => {
                 {offers.map(offer => (
                     <Marker key={offer.id} position={offer.restaurant.location}>
                         <Popup>
-                            <div className="p-1">
-                                <strong className="block text-primary">{offer.restaurant.name}</strong>
-                                <div className="text-sm mt-1">{offer.items[0].name}</div>
-                                <div className="mt-2 flex items-center gap-1 text-xs text-secondary font-bold">
-                                    <Clock size={12} />
-                                    <span>{offer.discountPercent}% OFF</span>
+                            <div className="p-1 min-w-[150px]">
+                                <strong className="block text-primary text-base mb-1">{offer.restaurant.name}</strong>
+                                <div className="text-sm text-slate-700 mb-2">{offer.items[0].name}</div>
+
+                                <div className="flex items-center justify-between mb-3">
+                                    <div className="flex items-center gap-1 text-xs text-red-500 font-bold bg-red-50 px-2 py-0.5 rounded">
+                                        <Clock size={12} />
+                                        <span>Last Call</span>
+                                    </div>
+                                    <span className="font-bold text-slate-900">-${offer.discountPercent}%</span>
                                 </div>
+
+                                <a
+                                    href={`/rescue/${offer.id}`}
+                                    className="block w-full text-center bg-primary text-white text-sm font-bold py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                                >
+                                    Rescue This
+                                </a>
                             </div>
                         </Popup>
                     </Marker>
