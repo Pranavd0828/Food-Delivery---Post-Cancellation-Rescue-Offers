@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Map, Wallet, User, CircleHelp } from 'lucide-react';
 import clsx from 'clsx';
+import OnboardingTour from '../Common/OnboardingTour';
 
 const NavItem = ({ to, icon: Icon, label }) => (
     <NavLink
@@ -19,6 +20,7 @@ const NavItem = ({ to, icon: Icon, label }) => (
 const MobileLayout = () => {
     return (
         <div className="flex flex-col h-screen max-w-md mx-auto bg-background shadow-2xl overflow-hidden relative border-x border-slate-200">
+            <OnboardingTour />
             <main className="flex-1 overflow-y-auto overflow-x-hidden relative">
                 <Outlet />
             </main>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
 import { useRescue } from '../../contexts/RescueContext';
 import L from 'leaflet';
 import { Clock, MapPin } from 'lucide-react';
@@ -27,6 +27,18 @@ const RadarMap = () => {
                 <TileLayer
                     attribution='&copy; OpenStreetMap'
                     url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                />
+
+                {/* Hot Zones (Heatmap Simulation) */}
+                <Circle
+                    center={[37.7765, -122.4172]}
+                    radius={800}
+                    pathOptions={{ color: 'transparent', fillColor: '#FF7675', fillOpacity: 0.2 }}
+                />
+                <Circle
+                    center={[37.7735, -122.4210]}
+                    radius={600}
+                    pathOptions={{ color: 'transparent', fillColor: '#6C5CE7', fillOpacity: 0.15 }}
                 />
 
                 {/* User Marker */}
