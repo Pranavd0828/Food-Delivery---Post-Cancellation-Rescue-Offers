@@ -1,31 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { MobileLayout } from './components/Layout/MobileLayout';
+import MobileLayout from './components/Layout/MobileLayout';
 import Home from './pages/Home';
-import RescueDetails from './pages/RescueDetails';
-import Checkout from './pages/Checkout';
-import Tracking from './pages/Tracking';
-import Receipt from './pages/Receipt';
-import Settings from './pages/Settings';
-import Impact from './pages/Impact';
-import Favorites from './pages/Favorites';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MobileLayout />}>
-        <Route index element={<Home />} />
-        <Route path="browse" element={<div>Browse (Mock)</div>} />
-        <Route path="orders" element={<Tracking />} />
-        <Route path="account" element={<Settings />} />
-        <Route path="impact" element={<Impact />} />
-        <Route path="favorites" element={<Favorites />} />
-      </Route>
-      {/* Full screen routes */}
-      <Route path="/rescue/:offerId" element={<RescueDetails />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/receipt" element={<Receipt />} />
-    </Routes>
+    <div className="h-screen w-full bg-background text-slate-900 overflow-hidden flex flex-col font-sans">
+      <Routes>
+        <Route path="/" element={<MobileLayout />}>
+          <Route index element={<Home />} />
+          <Route path="wallet" element={<div className="p-4">Wallet Coming Soon</div>} />
+          <Route path="profile" element={<div className="p-4">Profile Coming Soon</div>} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
