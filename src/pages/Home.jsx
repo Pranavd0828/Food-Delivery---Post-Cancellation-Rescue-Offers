@@ -1,9 +1,11 @@
 import React from 'react';
 import RadarMap from '../components/Rescue/RadarMap';
+import PulseTicker from '../components/Rescue/PulseTicker';
 
 const Home = () => {
     return (
-        <div className="h-full w-full">
+        <div className="h-full w-full relative">
+            <PulseTicker />
             <RadarMap />
 
             {/* Floating Action Button or List Toggle could go here */}

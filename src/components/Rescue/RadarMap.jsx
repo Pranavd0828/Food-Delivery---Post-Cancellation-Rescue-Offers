@@ -64,9 +64,10 @@ const RadarMap = () => {
 
             {/* Overlay UI will go here */}
             <div className="absolute top-4 left-4 z-[999] pointer-events-none">
-                <div className="bg-surface/90 backdrop-blur px-4 py-2 rounded-full shadow-lg pointer-events-auto">
+                <div className="bg-surface/90 backdrop-blur px-4 py-2 rounded-full shadow-lg pointer-events-auto flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="font-bold text-primary">Rescue Radar</span>
-                    <span className="ml-2 text-sm text-slate-500">Live</span>
+                    <span className="text-sm text-slate-500 font-mono">LIVE</span>
                 </div>
             </div>
         </div>
