@@ -1,16 +1,40 @@
-# React + Vite
+# Rescue Radar (Food Delivery Prototype)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**"Rescue Radar"** is a map-first food delivery experience focused on rescuing last-minute cancelled orders at 50-70% off. It turns food waste prevention into a high-stakes, gamified treasure hunt.
 
-Currently, two official plugins are available:
+## Core Features
+1.  **Rescue Radar (Map)**: Real-time visualization of available rescue deals nearby.
+2.  **The Pulse**: Live ticker showing real-time rescues from other users, creating social proof and urgency.
+3.  **Deal Details**: A "Secure This Deal" flow with a 90-second hold timer.
+4.  **Checkout & Wallet**: Seamless payment flow and "Rescue Credits" tracking.
+5.  **Leaderboard ("Waste Warriors")**: Gamified ranking based on CO2 saved and money rescued.
+6.  **Visual Polish**: Smooth page transitions and micro-interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+*   **Framework**: React + Vite
+*   **Styling**: Tailwind CSS
+*   **Maps**: React Leaflet
+*   **Icons**: Lucide React
+*   **Animations**: Framer Motion
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-## Expanding the ESLint configuration
+2.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3.  **Build for Production**
+    ```bash
+    npm run build
+    ```
+
+## Project Structure
+*   `src/components/Rescue`: Core feature components (RadarMap, PulseTicker, HoldTimer).
+*   `src/pages`: Main views (Home, Leaderboard, Wallet, Checkout).
+*   `src/contexts`: Global state (RescueContext for offers/cart).
