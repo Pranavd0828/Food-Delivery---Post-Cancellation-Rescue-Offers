@@ -19,7 +19,7 @@ const NavItem = ({ to, icon: Icon, label }) => (
 
 const MobileLayout = () => {
     return (
-        <div className="flex flex-col h-screen max-w-md mx-auto bg-background shadow-2xl overflow-hidden relative border-x border-slate-200">
+        <div className="flex flex-col h-screen w-full bg-background overflow-hidden relative">
             <OnboardingTour />
             <main className="flex-1 overflow-y-auto overflow-x-hidden relative">
                 <Outlet />

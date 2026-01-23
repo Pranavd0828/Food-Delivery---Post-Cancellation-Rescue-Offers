@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useRescue } from '../contexts/RescueContext';
 import { ArrowLeft, MapPin, Star, AlertCircle } from 'lucide-react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import HoldTimer from '../components/Rescue/HoldTimer';
 
 const RescueDetails = () => {
@@ -12,7 +13,7 @@ const RescueDetails = () => {
     // Find offer (in real app, fetch from API)
     const offer = offers.find(o => o.id === offerId);
 
-    if (!offer) return <div className="p-8 text-center">Offer not found</div>;
+    if (!offer) return <div className="p-8 text-center bg-background h-full">Offer not found</div>;
 
     const isHeld = activeHold?.offerId === offerId;
     const restaurant = offer.restaurant;
@@ -23,21 +24,38 @@ const RescueDetails = () => {
 
     return (
         <div className="h-full bg-background flex flex-col relative overflow-hidden">
-            {/* Header Image / Map Placeholder */}
-            <div className="h-48 bg-slate-200 relative">
+            {/* Header / Map Context */}
+            <div className="h-56 relative w-full overflow-hidden bg-slate-100">
+                <MapContainer
+                    center={restaurant.location}
+                    zoom={15}
+                    zoomControl={false}
+                    scrollWheelZoom={false}
+                    dragging={false}
+                    doubleClickZoom={false}
+                    className="h-full w-full opacity-60 grayscale-[50%]"
+                >
+                    <TileLayer
+                        attribution='&copy; OpenStreetMap'
+                        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                    />
+                    <Marker position={restaurant.location}>
+                        {/* No popup needed for context map */}
+                    </Marker>
+                </MapContainer>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none z-[400]"></div>
+
                 <button
                     onClick={() => navigate(-1)}
-                    className="absolute top-4 left-4 bg-white/90 p-2 rounded-full shadow-sm z-10"
+                    className="absolute top-4 left-4 bg-white/50 backdrop-blur-md hover:bg-white p-2 rounded-full shadow-sm z-[500] transition-all"
                 >
-                    <ArrowLeft size={20} />
+                    <ArrowLeft size={20} className="text-slate-900" />
                 </button>
-                <div className="w-full h-full flex items-center justify-center text-slate-400 bg-slate-100">
-                    Render Map Snippet Here
-                </div>
 
                 {/* Status Badge */}
-                <div className="absolute bottom-4 left-4">
-                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-red-200">
+                <div className="absolute top-4 right-4 z-[500]">
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg animate-pulse">
                         Rescue Deal
                     </span>
                 </div>
@@ -87,7 +105,7 @@ const RescueDetails = () => {
             </div>
 
             {/* Footer Action */}
-            <div className="p-4 bg-white border-t border-slate-100 absolute bottom-0 w-full pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+            <div className="p-4 bg-white border-t border-slate-100 absolute bottom-0 w-full pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-[600]">
                 {isHeld ? (
                     <div className="flex items-center justify-between gap-4">
                         <HoldTimer expiresAt={activeHold.expiresAt} onExpire={() => { }} />

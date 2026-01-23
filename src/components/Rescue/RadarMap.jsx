@@ -64,7 +64,7 @@ const RadarMap = () => {
 
                                 <a
                                     href={`/rescue/${offer.id}`}
-                                    className="block w-full text-center bg-primary text-white text-sm font-bold py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                                    className="block w-full text-center bg-primary !text-white text-sm font-bold py-2 rounded-lg hover:bg-primary/90 transition-colors"
                                 >
                                     Rescue This
                                 </a>
