@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Map, Wallet, User, CircleHelp } from 'lucide-react';
+import { Map, Wallet, User, Trophy } from 'lucide-react';
 import clsx from 'clsx';
 import OnboardingTour from '../Common/OnboardingTour';
 
@@ -27,6 +27,7 @@ const MobileLayout = () => {
 
             <nav className="h-16 bg-surface border-t border-slate-200 flex justify-around items-center px-2 z-50 shrink-0">
                 <NavItem to="/" icon={Map} label="Radar" />
+                <NavItem to="/leaderboard" icon={Trophy} label="Rank" />
                 <NavItem to="/wallet" icon={Wallet} label="Wallet" />
                 <NavItem to="/profile" icon={User} label="Profile" />
             </nav>

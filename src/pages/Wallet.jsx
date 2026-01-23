@@ -1,10 +1,11 @@
 import React from 'react';
 import { CreditCard, DollarSign, History } from 'lucide-react';
 import { CURRENT_USER } from '../data/mock';
+import PageTransition from '../components/Common/PageTransition';
 
 const Wallet = () => {
     return (
-        <div className="h-full p-4 bg-background">
+        <PageTransition className="h-full p-4 bg-background">
             <h1 className="text-2xl font-bold mb-6">Wallet</h1>
 
             {/* Balance Card */}
@@ -39,7 +40,7 @@ const Wallet = () => {
                 </div>
                 <span className="font-bold text-green-600">${CURRENT_USER.credits.toFixed(2)}</span>
             </div>
-        </div>
+        </PageTransition>
     );
 };
 
