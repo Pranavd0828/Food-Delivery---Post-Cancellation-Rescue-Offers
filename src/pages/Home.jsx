@@ -48,9 +48,10 @@ const Home = () => {
                 {/* Search Bar */}
                 <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                    type="text"
-                    placeholder="Search for restaurants"
-                    className="w-full bg-slate-100 text-slate-900 rounded-xl py-3 pl-10 pr-10 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium placeholder:text-slate-400"
+                    <input
+                        type="text"
+                        placeholder="Search for restaurants"
+                        className="w-full bg-slate-100 text-slate-900 rounded-xl py-3 pl-10 pr-10 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium placeholder:text-slate-400"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 border-l border-slate-300 pl-3 cursor-pointer">
                         <SlidersHorizontal size={18} className="text-slate-500" />

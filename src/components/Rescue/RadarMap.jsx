@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
 import { useRescue } from '../../contexts/RescueContext';
 import L from 'leaflet';
@@ -12,11 +12,44 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
+import AlertOverlay from './AlertOverlay';
+import { AnimatePresence } from 'framer-motion';
+
 const RadarMap = () => {
     const { userLocation, offers } = useRescue();
+    const [liveAlerts, setLiveAlerts] = useState([]);
+
+    // Simulation Engine: Trigger random alerts
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const randomOffer = offers[Math.floor(Math.random() * offers.length)];
+            const shouldTrigger = Math.random() > 0.6; // 40% chance to trigger an alert
+
+            if (shouldTrigger && randomOffer) {
+                const newAlert = {
+                    id: Date.now(),
+                    restaurantName: randomOffer.restaurant.name,
+                    item: randomOffer.items[0].name,
+                    discount: randomOffer.discountPercent,
+                    location: randomOffer.restaurant.location
+                };
+
+                setLiveAlerts(prev => [newAlert, ...prev].slice(0, 3)); // Keep last 3
+
+                // Auto dismiss after 5 seconds
+                setTimeout(() => {
+                    setLiveAlerts(prev => prev.filter(a => a.id !== newAlert.id));
+                }, 5000);
+            }
+        }, 2000); // Check every 2 seconds
+
+        return () => clearInterval(interval);
+    }, [offers]);
 
     return (
         <div className="h-full w-full relative">
+            <AlertOverlay alerts={liveAlerts} />
+
             <MapContainer
                 center={userLocation}
                 zoom={14}
@@ -72,6 +105,17 @@ const RadarMap = () => {
                         </Popup>
                     </Marker>
                 ))}
+
+                {/* Live Alert Pulsating Markers */}
+                {liveAlerts.map(alert => (
+                    <Circle
+                        key={alert.id}
+                        center={alert.location}
+                        radius={100}
+                        pathOptions={{ color: '#EF4444', fillColor: '#EF4444', fillOpacity: 0.4 }}
+                    />
+                ))}
+
             </MapContainer>
 
             {/* Overlay UI will go here */}
