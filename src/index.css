@@ -18,8 +18,15 @@
   }
 }
 
+
 .leaflet-container {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+/* Fix for blue border/outline on focused markers (accessibility focus ring) */
+.leaflet-marker-icon:focus,
+.leaflet-marker-icon:focus-visible {
+  outline: none;
 }
