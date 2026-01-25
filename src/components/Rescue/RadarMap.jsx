@@ -82,7 +82,7 @@ const RadarMap = () => {
                 {/* Restaurant Pins */}
                 {offers.map(offer => (
                     <Marker key={offer.id} position={offer.restaurant.location}>
-                        <Popup>
+                        <Popup autoPanPadding={[20, 150]}>
                             <div className="p-1 min-w-[150px]">
                                 <strong className="block text-primary text-base mb-1">{offer.restaurant.name}</strong>
                                 <div className="text-sm text-slate-700 mb-2">{offer.items[0].name}</div>
