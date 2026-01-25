@@ -8,6 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Food-Delivery---Post-Cancellation-Rescue-Offers/',
   plugins: [
     react(),
     tailwindcss(),
