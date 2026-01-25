@@ -15,6 +15,8 @@ L.Icon.Default.mergeOptions({
 import AlertOverlay from './AlertOverlay';
 import { AnimatePresence } from 'framer-motion';
 
+import { Link } from 'react-router-dom';
+
 const RadarMap = () => {
     const { userLocation, offers } = useRescue();
     const [liveAlerts, setLiveAlerts] = useState([]);
@@ -95,12 +97,12 @@ const RadarMap = () => {
                                     <span className="font-bold text-slate-900">-${offer.discountPercent}%</span>
                                 </div>
 
-                                <a
-                                    href={`/rescue/${offer.id}`}
+                                <Link
+                                    to={`/rescue/${offer.id}`}
                                     className="block w-full text-center bg-primary !text-white text-sm font-bold py-2 rounded-lg hover:bg-primary/90 transition-colors"
                                 >
                                     Rescue This
-                                </a>
+                                </Link>
                             </div>
                         </Popup>
                     </Marker>
