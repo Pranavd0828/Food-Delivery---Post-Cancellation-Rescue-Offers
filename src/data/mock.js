@@ -6,17 +6,19 @@ export const CURRENT_USER = {
     credits: 5.00
 };
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const RESTAURANTS = [
-    { id: 'r1', name: 'Sushi Zen', type: 'Sushi', location: [37.7765, -122.4172], rating: 4.8, distance: 350, image: '/images/sushi.png' },
-    { id: 'r2', name: 'Burger & Co', type: 'Burgers', location: [37.7735, -122.4210], rating: 4.5, distance: 400, image: '/images/burger.png' },
-    { id: 'r3', name: 'Baja Fresh', type: 'Mexican', location: [37.7780, -122.4150], rating: 4.2, distance: 600, image: '/images/mexican.png' },
-    { id: 'r4', name: 'Pasta House', type: 'Italian', location: [37.7710, -122.4190], rating: 4.6, distance: 750, image: '/images/italian.png' },
-    { id: 'r5', name: 'Green Salad', type: 'Healthy', location: [37.7755, -122.4240], rating: 4.7, distance: 200, image: '/images/healthy.png' },
-    { id: 'r6', name: 'Taco Tremendo', type: 'Mexican', location: [37.7765, -122.4175], rating: 4.3, distance: 300, image: '/images/mexican.png' },
-    { id: 'r7', name: 'Dim Sum Daily', type: 'Chinese', location: [37.7725, -122.4150], rating: 4.4, distance: 800, image: '/images/chinese.png' },
-    { id: 'r8', name: 'Pizza My Heart', type: 'Pizza', location: [37.7780, -122.4220], rating: 4.8, distance: 600, image: '/images/pizza.png' },
-    { id: 'r9', name: 'Curry Up Now', type: 'Asian', location: [37.7750, -122.4080], rating: 4.6, distance: 950, image: '/images/asian.png' },
-    { id: 'r10', name: 'Sweet Tooth', type: 'Dessert', location: [37.7790, -122.4120], rating: 4.9, distance: 1200, image: '/images/dessert.png' }
+    { id: 'r1', name: 'Sushi Zen', type: 'Sushi', location: [37.7765, -122.4172], rating: 4.8, distance: 350, image: `${BASE_URL}images/sushi.png` },
+    { id: 'r2', name: 'Burger & Co', type: 'Burgers', location: [37.7735, -122.4210], rating: 4.5, distance: 400, image: `${BASE_URL}images/burger.png` },
+    { id: 'r3', name: 'Baja Fresh', type: 'Mexican', location: [37.7780, -122.4150], rating: 4.2, distance: 600, image: `${BASE_URL}images/mexican.png` },
+    { id: 'r4', name: 'Pasta House', type: 'Italian', location: [37.7710, -122.4190], rating: 4.6, distance: 750, image: `${BASE_URL}images/italian.png` },
+    { id: 'r5', name: 'Green Salad', type: 'Healthy', location: [37.7755, -122.4240], rating: 4.7, distance: 200, image: `${BASE_URL}images/healthy.png` },
+    { id: 'r6', name: 'Taco Tremendo', type: 'Mexican', location: [37.7765, -122.4175], rating: 4.3, distance: 300, image: `${BASE_URL}images/mexican.png` },
+    { id: 'r7', name: 'Dim Sum Daily', type: 'Chinese', location: [37.7725, -122.4150], rating: 4.4, distance: 800, image: `${BASE_URL}images/chinese.png` },
+    { id: 'r8', name: 'Pizza My Heart', type: 'Pizza', location: [37.7780, -122.4220], rating: 4.8, distance: 600, image: `${BASE_URL}images/pizza.png` },
+    { id: 'r9', name: 'Curry Up Now', type: 'Asian', location: [37.7750, -122.4080], rating: 4.6, distance: 950, image: `${BASE_URL}images/asian.png` },
+    { id: 'r10', name: 'Sweet Tooth', type: 'Dessert', location: [37.7790, -122.4120], rating: 4.9, distance: 1200, image: `${BASE_URL}images/dessert.png` }
 ];
 
 export const MOCK_OFFERS = [
